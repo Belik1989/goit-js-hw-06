@@ -9,8 +9,8 @@ function onInputChange(event) {
     console.log(event.currentTarget.value);
     
     nameLabel.textContent = event.currentTarget.value;
-    if (event.currentTarget.value === ""){
-        return (`Anonimous`);
+    if (!nameLabel.textContent) {
+        return (nameLabel.textContent = "Anonymous");
     };
 
 }

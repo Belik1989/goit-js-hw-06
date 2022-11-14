@@ -32,6 +32,5 @@ button {
   margin-right: auto;
 }
 .gallery__item{
-  border-radius: 50%;
   list-style: none;
 }
