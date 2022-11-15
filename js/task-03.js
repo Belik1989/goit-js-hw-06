@@ -13,22 +13,31 @@ const images = [
   },
 ];
 
-const elementsGallery = document.querySelector(".gallery");
+// const elementsGallery = document.querySelector(".gallery");
 
-const makeImageCard =({ url, alt}) => {
+// const makeImageCard =({ url, alt}) => {
 
-  const itemElement = document.createElement("li");
-  itemElement.classList.add("gallery__item");
+//   const itemElement = document.createElement("li");
+//   itemElement.classList.add("gallery__item");
   
-  const imgElement = document.createElement("img");
-  imgElement.classList.add("gallery__img");
-  imgElement.src = url;
-  imgElement.alt =alt;
+//   const imgElement = document.createElement("img");
+//   imgElement.classList.add("gallery__img");
+//   imgElement.src = url;
+//   imgElement.alt =alt;
 
-  itemElement.append(imgElement);
-  return itemElement;
+//   itemElement.append(imgElement);
+//   return itemElement;
+// };
+
+// const elements = images.map(makeImageCard);
+// console.log(elements);
+// elementsGallery.append(...elements);
+const makeGalleryItemEl = ({ url, alt }) => {
+  return `<li class = "item"> <img class = "img" width="400"
+  src = "${url}" alt = "${alt}"></li>`;
 };
+const makeGalleryNew = images.map(makeGalleryItemEl).join("");
+const wholeGalleryNew = document.querySelector(".gallery");
 
-const elements = images.map(makeImageCard);
-console.log(elements);
-elementsGallery.append(...elements);
+wholeGalleryNew.insertAdjacentHTML("beforeend", makeGalleryNew);
+

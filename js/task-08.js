@@ -11,6 +11,7 @@ function fieldsCheck(event) {
 
     if (email.length === 0 || password.length === 0) {
         alert(' Fill in all forms');
+        return;
     }
 
     const formData ={
